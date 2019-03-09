@@ -1,0 +1,51 @@
+<html>
+<center>
+<form>
+<title>LISTA TELEFONICA</title>
+<h1>LISTA TELEFONICA</h1>
+Nome:<input type="text" id="x" placeholder="Taynara Souza" /><br>
+Telefone:<input type="text" id="y" placeholder="(xx)xxxx-xxxx"/><br>
+<input type="button" value="OK" onclick="adiciona()"/>
+
+</form>
+
+
+
+<div id="texto" > </div>
+
+</center>
+
+
+<script>
+
+V= '<input type="button" value="x" onclick="excluir()"/>'
+
+var i = 1;
+function adiciona(){
+	var nome= document.getElementById('x').value;
+	var fone= document.getElementById('y').value;
+	var myArray= [nome+"-"+fone];
+
+
+if (nome.length==0){
+	alert("Digite o nome do Contato");	
+}
+if (fone.length==0){
+	alert("Digite o numero do Contato")	;
+}
+if (myArray!="-"){
+var t= document.getElementById("texto").innerHTML +="<div class='lista'  id='"+i+"'> "+myArray+" </div> <div>"+V+"</div>" ;
+	
+}else{
+	return false;
+}
+i++;
+}
+function excluir() {
+	document.getElementById('id').remove()
+}
+
+
+
+</script>
+</html>
